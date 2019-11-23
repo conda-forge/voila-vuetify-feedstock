@@ -1,5 +1,5 @@
 {% set name = "voila-vuetify" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0bf4e3a1f7e20c1cd091bb1e17ee9d1cd5100f267117ac733885a834d668c77b
+  sha256: cc2dff846acccce5ee9f4c17bf6c72face4f896c08bd30f97c2cecfed84cb0c3
 
 build:
   noarch: python
