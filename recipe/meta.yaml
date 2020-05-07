@@ -1,5 +1,5 @@
 {% set name = "voila-vuetify" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 058beaa4b673afd7a1eb3f42a2b9f90f72897457b9e131fae85dd094a3bd8a96
+  sha256: 5a002ba34633c012d77474c409a077428ab5b9ae8dfc6d848e5c932ee0bc2984
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -41,7 +41,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Vuetify specific template for Voila'
+  summary: Vuetify specific template for Voila
 
   description: |
     Vuetify specific template for Voila
