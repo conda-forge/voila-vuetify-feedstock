@@ -5,7 +5,7 @@ Home: http://github.com/quantstack/voila-vuetify
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Vuetify specific template for Voila
 
