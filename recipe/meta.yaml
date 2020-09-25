@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,20 +21,24 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - voila >=0.1.11,<0.2
+    - voila >=0.2,<0.3
 
 test:
   commands:
-    - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-base/nbconvert_templates/app.html"  # [unix]
-    - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-base/nbconvert_templates/util.js"  # [unix]
-    - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-base/nbconvert_templates/voila.tpl"  # [unix]
-    - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-default/conf.json"  # [unix]
-    - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-default/nbconvert_templates/app.html"  # [unix]
-    - test -f "%PREFIX%/share/jupyter/voila/templates/vuetify-base/nbconvert_templates/app.html"  # [win]
-    - test -f "%PREFIX%/share/jupyter/voila/templates/vuetify-base/nbconvert_templates/util.js"  # [win]
-    - test -f "%PREFIX%/share/jupyter/voila/templates/vuetify-base/nbconvert_templates/voila.tpl"  # [win]
-    - test -f "%PREFIX%/share/jupyter/voila/templates/vuetify-default/conf.json"  # [win]
-    - test -f "%PREFIX%/share/jupyter/voila/templates/vuetify-default/nbconvert_templates/app.html"  # [win]
+    - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-base/index.html.j2"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-base/app.html"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-base/util.js"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-base/index.html.j2"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-base/conf.json"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-default/conf.json"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-default/app.html"  # [unix]
+    - test -f "%PREFIX%/share/jupyter/voila/templates/vuetify-base/index.html.j2"  # [win]
+    - test -f "%PREFIX%/share/jupyter/nbconvert/templates/vuetify-base/app.html"  # [win]
+    - test -f "%PREFIX%/share/jupyter/nbconvert/templates/vuetify-base/util.js"  # [win]
+    - test -f "%PREFIX%/share/jupyter/nbconvert/templates/vuetify-base/index.html.j2"  # [win]
+    - test -f "%PREFIX%/share/jupyter/nbconvert/templates/vuetify-base/conf.json"  # [win]
+    - test -f "%PREFIX%/share/jupyter/nbconvert/templates/vuetify-default/conf.json"  # [win]
+    - test -f "%PREFIX%/share/jupyter/nbconvert/templates/vuetify-default/app.html"  # [win]
 
 about:
   home: http://github.com/quantstack/voila-vuetify
