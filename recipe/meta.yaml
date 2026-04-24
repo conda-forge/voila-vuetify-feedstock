@@ -6,24 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c7fa908de4c026436608afabde98abdc570aba4cf3396de48216792f3b38640c
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - voila >=0.2,<0.4
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f "${PREFIX}/share/jupyter/voila/templates/vuetify-base/index.html.j2"  # [unix]
     - test -f "${PREFIX}/share/jupyter/nbconvert/templates/vuetify-base/app.html"  # [unix]
